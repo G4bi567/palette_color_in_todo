@@ -77,7 +77,7 @@ const debug = ref(false);
     />
   </form>
   <ul class="todo-collection">
-    <li v-for="todoItem in todos" class="todo-collection__item" :style="{backgroundColor:{{color}}}">
+    <li v-for="todoItem in todos" class="todo-collection__item" v-bind:style="backgroundColor: colorbackground">
       <todo-item  :todo="todoItem" @deleteItem="handleDeleteItem"></todo-item>
     </li>
   </ul>
