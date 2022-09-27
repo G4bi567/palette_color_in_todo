@@ -10,7 +10,8 @@
   },
   "dependencies": {
     "@caohenghu/vue-colorpicker": "^1.2.4",
-    "vue": "^3.2.39"
+    "vue": "^3.2.39",
+    "vue-color-kit": "^1.0.5"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^3.1.0",
