@@ -77,15 +77,14 @@ const debug = ref(false);
     />
   </form>
   <ul class="todo-collection">
-    <li v-for="todoItem in todos" class="todo-collection__item">
+    <li v-for="todoItem in todos" class="todo-collection__item" :style="{backgroundColor:{{color}}}">
       <todo-item  :todo="todoItem" @deleteItem="handleDeleteItem"></todo-item>
     </li>
   </ul>
-  <Color></Color>
+  <input v-model="color" type="color" id="color-picker" />
 </template>
 
 <style scoped>
-
 .shake {
   animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
   transform: translate3d(0, 0, 0);
