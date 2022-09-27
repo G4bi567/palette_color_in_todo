@@ -1,7 +1,7 @@
 <script setup>
 import { ref, reactive } from 'vue';
 import TodoItem from './TodoItem.vue';
-
+import Color from './palette.vue';
 const todos = reactive([
   {
     title: 'pommes',
