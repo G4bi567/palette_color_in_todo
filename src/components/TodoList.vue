@@ -50,6 +50,8 @@ const handleDeleteItem = (id) => {
   todos.splice(index, 1);
 };
 
+var colorbackground = ref("red");
+
 const debug = ref(false);
 </script>
 
@@ -76,12 +78,14 @@ const debug = ref(false);
   </form>
   <ul class="todo-collection">
     <li v-for="todoItem in todos" class="todo-collection__item">
-      <todo-item :todo="todoItem" @deleteItem="handleDeleteItem"></todo-item>
+      <todo-item  :todo="todoItem" @deleteItem="handleDeleteItem"></todo-item>
     </li>
   </ul>
+  <Color></Color>
 </template>
 
 <style scoped>
+
 .shake {
   animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
   transform: translate3d(0, 0, 0);

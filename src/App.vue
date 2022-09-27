@@ -1,6 +1,6 @@
 <script setup>
-import NavBar from "./components/Navbar.vue"
-import TodoList from "./components/TodoList.vue"
+import NavBar from "./components/Navbar.vue";
+import TodoList from "./components/TodoList.vue";
 </script>
 
 <template>
@@ -8,6 +8,7 @@ import TodoList from "./components/TodoList.vue"
 <main class="wrapper">
   <nav-bar></nav-bar>
   <todo-list></todo-list>
+
 </main>
 
 </template>
