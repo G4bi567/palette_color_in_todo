@@ -2,6 +2,7 @@
 import { ref, reactive } from 'vue';
 import TodoItem from './TodoItem.vue';
 import Color from './palette.vue';
+
 const todos = reactive([
   {
     title: 'pommes',
@@ -49,6 +50,9 @@ const handleDeleteItem = (id) => {
   const index = todos.findIndex((todo) => (todo.id = id));
   todos.splice(index, 1);
 };
+const handlecolorbg = (colorpick)=>{
+
+}
 
 var colorbackground = ref("red");
 
@@ -77,11 +81,11 @@ const debug = ref(false);
     />
   </form>
   <ul class="todo-collection">
-    <li v-for="todoItem in todos" class="todo-collection__item" v-bind:style="backgroundColor: colorbackground">
+    <li v-for="todoItem in todos" class="todo-collection__item">
       <todo-item  :todo="todoItem" @deleteItem="handleDeleteItem"></todo-item>
     </li>
   </ul>
-  <input v-model="color" type="color" id="color-picker" />
+  <Color @colorpick="handlecolorbg"></Color>
 </template>
 
 <style scoped>
