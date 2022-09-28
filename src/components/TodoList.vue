@@ -41,7 +41,6 @@ const addNewTodo = () => {
     todos.push({ ...newTodo, done: true, id: maxId });
     newTodo.title = '';
   } else {
-    alert('bonjour');
     able.value = true;
   }
 };
@@ -51,16 +50,17 @@ const handleDeleteItem = (id) => {
   todos.splice(index, 1);
 };
 const handlecolorbg = (colorpick)=>{
-
+  colorbg = colorpick
+  alert(colorpick)
 }
 
 var colorbackground = ref("red");
 
-const debug = ref(false);
+const debug = ref(true);
 </script>
 
 <template>
-  <pre v-if="debug">{{ todos }}</pre>
+  <pre v-if="debug">{{ colorbg }}</pre>
   <form :class="{ shake: able }" class="todo-form">
     <div class="input-field">
       <input
@@ -81,7 +81,7 @@ const debug = ref(false);
     />
   </form>
   <ul class="todo-collection">
-    <li v-for="todoItem in todos" class="todo-collection__item">
+    <li :style="{'background-image':colorbg}" v-for="todoItem in todos" class="todo-collection__item">
       <todo-item  :todo="todoItem" @deleteItem="handleDeleteItem"></todo-item>
     </li>
   </ul>
@@ -93,7 +93,6 @@ const debug = ref(false);
   animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
   transform: translate3d(0, 0, 0);
 }
-
 @keyframes shake {
   10%,
   90% {
