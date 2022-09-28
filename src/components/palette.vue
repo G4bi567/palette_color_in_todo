@@ -1,5 +1,5 @@
 <template>
-<input @click="function(){alert(colorbg)}" v-model="colorbg" type="color" id="color-picker" />
+<input @change="function(){alert(colorbg)}" v-model="colorbg" type="color" id="color-picker" />
 </template>
 <style></style>
 <script>
