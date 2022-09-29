@@ -49,8 +49,11 @@ const handleDeleteItem = (id) => {
   const index = todos.findIndex((todo) => (todo.id = id));
   todos.splice(index, 1);
 };
+
+const colorbg = ref("red")
 const handlecolorbg = (colorpick)=>{
-  colorbg = colorpick
+  alert
+  colorbg.value = colorpick
   alert(colorpick)
 }
 
@@ -80,8 +83,8 @@ const debug = ref(true);
       @click.prevent="addNewTodo"
     />
   </form>
-  <ul class="todo-collection">
-    <li :style="{'background-image':colorbg}" v-for="todoItem in todos" class="todo-collection__item">
+  <ul class="todo-collection" >
+    <li :style="{'background-color':colorbg}" v-for="todoItem in todos" class="todo-collection__item">
       <todo-item  :todo="todoItem" @deleteItem="handleDeleteItem"></todo-item>
     </li>
   </ul>
